@@ -1,18 +1,16 @@
 {
   "name": "playwright-projects",
   "version": "1.0.0",
-  "description": "Automated Playwright scripts for temp email and register-login-recovery flows with robust screenshot and report management",
-  "main": "index.js",
-  "scripts": {
+  "description": "Automated Playwright scripts for register-login-recovery flows with robust screenshot and report management",
+  "main": "index.js",  "scripts": {
     "test": "npx playwright test",
-    "temp-email": "node temp-email-script/temp_email.js",
     "register-login-recovery": "node register-login-recovery-script/Register_login_Recovery.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ananyaakamat/Playwright_projects.git"
   },
-  "keywords": ["playwright", "automation", "testing", "email", "registration", "login"],
+  "keywords": ["playwright", "automation", "testing", "registration", "login"],
   "author": "ananyaakamat",
   "license": "MIT",
   "devDependencies": {

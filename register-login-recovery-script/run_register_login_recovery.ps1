@@ -29,9 +29,8 @@ try {
                 Write-Host "Script completed successfully!" -ForegroundColor Green
                 Write-Host "Check the following files for results:" -ForegroundColor Cyan
                 Write-Host "- registration_data.csv (test data)" -ForegroundColor White
-                Write-Host "- registration_success.png (screenshot)" -ForegroundColor White
-                Write-Host "- login_success.png (screenshot)" -ForegroundColor White
-                Write-Host "- password_recovery.png (screenshot)" -ForegroundColor White
+                Write-Host "- screenshots/ (registration_success.png, login_success.png, password_recovery.png)" -ForegroundColor White
+                Write-Host "- test-reports/ (HTML test reports)" -ForegroundColor White
             }
             else {
                 Write-Host "Script execution failed" -ForegroundColor Red

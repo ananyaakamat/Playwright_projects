@@ -194,10 +194,9 @@ function generateHTMLReport(testResults) {
                 <h2>📸 Screenshots Captured</h2>
             </div>
             <div class="section-content">                <div class="screenshots-grid">
-                    ${reportData.screenshots.map(screenshot => {
-                        // Convert absolute path to relative path for web browser
+                    ${reportData.screenshots.map(screenshot => {                        // Convert absolute path to relative path for web browser (from test-reports to screenshots)
                         const fileName = path.basename(screenshot.path);
-                        const relativePath = `./screenshots/${fileName}`;
+                        const relativePath = `../screenshots/${fileName}`;
                         return `
                         <div class="screenshot-item">
                             <img src="${relativePath}" alt="${screenshot.name}" onclick="window.open('${relativePath}', '_blank')" title="Click to open in new tab">
@@ -217,7 +216,7 @@ function generateHTMLReport(testResults) {
 </body>
 </html>`;
 
-    const reportPath = path.join(__dirname, `test-report-${getTimestamp()}.html`);
+    const reportPath = path.join(__dirname, 'test-reports', `test-report-${getTimestamp()}.html`);
     fs.writeFileSync(reportPath, htmlContent);
     console.log(`📊 HTML Report generated: ${reportPath}`);
     return reportPath;
@@ -296,14 +295,20 @@ function cleanupOldScreenshots() {
 function cleanupOldTestReports() {
     try {
         console.log('🧹 Cleaning up old test report files...');
+          // Get all test report files
+        const testReportsDir = path.join(__dirname, 'test-reports');
         
-        // Get all test report files
-        const reportFiles = fs.readdirSync(__dirname)
+        // Create test-reports directory if it doesn't exist
+        if (!fs.existsSync(testReportsDir)) {
+            fs.mkdirSync(testReportsDir);
+        }
+        
+        const reportFiles = fs.readdirSync(testReportsDir)
             .filter(file => file.startsWith('test-report-') && file.endsWith('.html'))
             .map(file => ({
                 name: file,
-                path: path.join(__dirname, file),
-                stats: fs.statSync(path.join(__dirname, file))
+                path: path.join(testReportsDir, file),
+                stats: fs.statSync(path.join(testReportsDir, file))
             }))
             .sort((a, b) => b.stats.mtime - a.stats.mtime); // Sort by modification time, newest first
         

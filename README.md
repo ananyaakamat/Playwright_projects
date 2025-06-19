@@ -1,26 +1,20 @@
 # Playwright Automation Scripts
 
-This project contains multiple Playwright automation scripts for different purposes, organized in separate folders for better maintainability.
+This project contains Playwright automation scripts for register-login-recovery flows, organized for better maintainability.
 
 ## Project Structure
 
 ```
 📦 Playwright_projects/
-├── 📁 temp-email-script/           # Temporary email automation
-│   ├── temp_email.js               # Main script
-│   ├── run_temp_email.bat          # Windows batch file
-│   ├── run_temp_email.ps1          # PowerShell script
-│   └── README.md                   # Script documentation
 ├── 📁 register-login-recovery-script/  # User registration flow
 │   ├── Register_login_Recovery.js  # Main script
 │   ├── Register_Login_Recovery_README.md  # Detailed documentation
-│   ├── run_register_login_recovery.bat    # Windows batch file
 │   ├── run_register_login_recovery.ps1    # PowerShell script
 │   ├── registration_data.csv       # Generated test data
-│   └── *.png                       # Generated screenshots
+│   ├── screenshots/                # Generated screenshots
+│   └── test-reports/               # HTML test reports
 ├── 📁 docs/                        # Documentation and guides
-│   ├── EXECUTION_GUIDE.md          # General execution guide
-│   └── setup_helper.js             # Setup utilities
+│   └── EXECUTION_GUIDE.md          # General execution guide
 ├── package.json                    # Project dependencies
 ├── playwright.config.js            # Playwright configuration
 └── README.md                       # This file
@@ -28,16 +22,7 @@ This project contains multiple Playwright automation scripts for different purpo
 
 ## Scripts Overview
 
-### 1. Temp Email Script (`temp-email-script/`)
-
-- **Purpose**: Automates temporary email generation from temp-mail.org
-- **Features**:
-  - Opens temp-mail.org in Chrome
-  - Generates new temporary email
-  - Saves email to text file
-- **Run**: `cd temp-email-script && node temp_email.js`
-
-### 2. Register-Login-Recovery Script (`register-login-recovery-script/`)
+### Register-Login-Recovery Script (`register-login-recovery-script/`)
 
 - **Purpose**: Complete user registration, login, and password recovery flow
 - **Features**:
@@ -46,7 +31,8 @@ This project contains multiple Playwright automation scripts for different purpo
   - Login verification
   - Password recovery testing
   - Screenshot capture at each step
-- **Run**: `cd register-login-recovery-script && node Register_login_Recovery.js`
+  - HTML test reports with embedded screenshots
+- **Run**: `cd register-login-recovery-script && .\run_register_login_recovery.ps1`
 
 ## Quick Setup
 
@@ -65,17 +51,17 @@ This project contains multiple Playwright automation scripts for different purpo
 
 ### Running Scripts
 
-Each script folder contains multiple ways to run the automation:
+The register-login-recovery script can be run using:
 
-- **Batch File** (Windows): `run_scriptname.bat`
-- **PowerShell**: `powershell -ExecutionPolicy Bypass -File run_scriptname.ps1`
-- **Direct Node.js**: `node scriptname.js`
+- **PowerShell**: `.\run_register_login_recovery.ps1`
+- **Direct Node.js**: `node Register_login_Recovery.js`
 
 ### Output Files
 
-- Each script generates its own output files in its respective folder
-- Screenshots are automatically saved for verification
-- Data files (CSV) are created for registration flows
+- Screenshots are automatically saved in the `screenshots/` folder for verification
+- HTML test reports are generated in the `test-reports/` folder with embedded screenshots
+- Registration data is exported to `registration_data.csv`
+- Only the last 3 files of each type are kept to maintain a clean workspace
 
 ## Troubleshooting
 
