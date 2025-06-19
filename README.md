@@ -1,54 +1,85 @@
-# Temp Email Playwright Script
+# Playwright Automation Scripts
 
-This project contains a Playwright script that automates the process of getting a temporary email from temp-mail.org.
+This project contains multiple Playwright automation scripts for different purposes, organized in separate folders for better maintainability.
 
-## Features
+## Project Structure
 
-- Opens temp-mail.org in Chrome browser
-- Clicks the delete button to generate a new email
-- Waits for the new email to be created
-- Copies the email address to a text file named `temp_email.txt`
+```
+📦 Playwright_projects/
+├── 📁 temp-email-script/           # Temporary email automation
+│   ├── temp_email.js               # Main script
+│   ├── run_temp_email.bat          # Windows batch file
+│   ├── run_temp_email.ps1          # PowerShell script
+│   └── README.md                   # Script documentation
+├── 📁 register-login-recovery-script/  # User registration flow
+│   ├── Register_login_Recovery.js  # Main script
+│   ├── Register_Login_Recovery_README.md  # Detailed documentation
+│   ├── run_register_login_recovery.bat    # Windows batch file
+│   ├── run_register_login_recovery.ps1    # PowerShell script
+│   ├── registration_data.csv       # Generated test data
+│   └── *.png                       # Generated screenshots
+├── 📁 docs/                        # Documentation and guides
+│   ├── EXECUTION_GUIDE.md          # General execution guide
+│   └── setup_helper.js             # Setup utilities
+├── package.json                    # Project dependencies
+├── playwright.config.js            # Playwright configuration
+└── README.md                       # This file
+```
 
-## Setup
+## Scripts Overview
 
-1. Make sure you have Node.js installed on your system
-2. Run the batch file to install dependencies and execute the script:
-   ```
-   run_temp_email.bat
-   ```
+### 1. Temp Email Script (`temp-email-script/`)
 
-## Manual Setup (if batch file doesn't work)
+- **Purpose**: Automates temporary email generation from temp-mail.org
+- **Features**:
+  - Opens temp-mail.org in Chrome
+  - Generates new temporary email
+  - Saves email to text file
+- **Run**: `cd temp-email-script && node temp_email.js`
 
-1. Install dependencies:
+### 2. Register-Login-Recovery Script (`register-login-recovery-script/`)
 
-   ```
+- **Purpose**: Complete user registration, login, and password recovery flow
+- **Features**:
+  - User registration with form filling
+  - Data export to CSV
+  - Login verification
+  - Password recovery testing
+  - Screenshot capture at each step
+- **Run**: `cd register-login-recovery-script && node Register_login_Recovery.js`
+
+## Quick Setup
+
+1. **Install Node.js** (if not already installed)
+2. **Install dependencies**:
+   ```bash
    npm install
    ```
-
-2. Install Playwright browsers:
-
-   ```
+3. **Install Playwright browsers**:
+   ```bash
    npx playwright install chromium
    ```
+4. **Run any script** by navigating to its folder and using the provided batch/PowerShell files
 
-3. Run the script:
-   ```
-   node temp_email.js
-   ```
+## Usage
 
-## Output
+### Running Scripts
 
-The script will create a file called `temp_email.txt` containing the temporary email address.
+Each script folder contains multiple ways to run the automation:
+
+- **Batch File** (Windows): `run_scriptname.bat`
+- **PowerShell**: `powershell -ExecutionPolicy Bypass -File run_scriptname.ps1`
+- **Direct Node.js**: `node scriptname.js`
+
+### Output Files
+
+- Each script generates its own output files in its respective folder
+- Screenshots are automatically saved for verification
+- Data files (CSV) are created for registration flows
 
 ## Troubleshooting
 
-- If the script fails, check the error messages in the console
-- Screenshots are taken automatically for debugging purposes when errors occur
-- The script uses multiple fallback selectors to find elements on the page
-- If PowerShell execution policies prevent running npm commands, use the provided batch file
-
-## Configuration
-
-- Change `headless: false` to `headless: true` in the script to run without opening the browser window
-- Adjust timeout values if the website is slow to load
-- Modify selectors in the script if the website structure changes
+- Check individual script README files for specific guidance
+- Ensure Chrome browser is installed
+- Run commands as Administrator if needed
+- Check `docs/EXECUTION_GUIDE.md` for detailed setup instructions

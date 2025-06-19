@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screenshot Link Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .screenshot-item { text-align: center; padding: 15px; margin: 20px; background: #f8f9fa; border-radius: 8px; }
+        .screenshot-item img { max-width: 300px; height: auto; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; }
+        .screenshot-title { margin-top: 10px; font-weight: bold; color: #495057; }
+    </style>
+</head>
+<body>
+    <h1>Screenshot Link Test</h1>
+    <p>Click on the screenshots below to test if they open in new tabs:</p>
+    
+    <div class="screenshot-item">
+        <img src="./screenshots/registration_success_19June2025_2_36_PM.png" alt="Registration" onclick="window.open('./screenshots/registration_success_19June2025_2_36_PM.png', '_blank')" title="Click to open in new tab">
+        <div class="screenshot-title">Registration Success</div>
+    </div>
+    
+    <div class="screenshot-item">
+        <img src="./screenshots/login_success_19June2025_2_36_PM.png" alt="Login" onclick="window.open('./screenshots/login_success_19June2025_2_36_PM.png', '_blank')" title="Click to open in new tab">
+        <div class="screenshot-title">Login Success</div>
+    </div>
+    
+    <div class="screenshot-item">
+        <img src="./screenshots/password_recovery_19June2025_2_37_PM.png" alt="Password Recovery" onclick="window.open('./screenshots/password_recovery_19June2025_2_37_PM.png', '_blank')" title="Click to open in new tab">
+        <div class="screenshot-title">Password Recovery</div>
+    </div>
+</body>
+</html>

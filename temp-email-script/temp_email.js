@@ -100,8 +100,7 @@ async function getTempEmail() {    // Launch browser
         
         let emailElement = null;
         let emailText = '';
-        
-        for (const selector of emailSelectors) {
+          for (const selector of emailSelectors) {
             try {
                 emailElement = page.locator(selector).first();
                 if (await emailElement.isVisible({ timeout: 2000 })) {
