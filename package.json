@@ -1,0 +1,16 @@
+{
+  "name": "temp-email-playwright",
+  "version": "1.0.0",
+  "description": "Playwright script for temp email automation",
+  "main": "temp_email.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "temp-email": "node temp_email.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  }
+}
