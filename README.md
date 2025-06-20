@@ -14,7 +14,8 @@ This project contains Playwright automation scripts for register-login-recovery 
 │   ├── screenshots/                # Generated screenshots
 │   └── test-reports/               # HTML test reports
 ├── 📁 docs/                        # Documentation and guides
-│   └── EXECUTION_GUIDE.md          # General execution guide
+│   ├── EXECUTION_GUIDE.md          # General execution guide
+│   └── REQUIREMENTS_SPECIFICATION.md # Detailed requirements specification
 ├── package.json                    # Project dependencies
 ├── playwright.config.js            # Playwright configuration
 └── README.md                       # This file
@@ -62,6 +63,12 @@ The register-login-recovery script can be run using:
 -   HTML test reports are generated in the `test-reports/` folder with embedded screenshots
 -   Registration data is exported to `registration_data.csv`
 -   Only the last 3 files of each type are kept to maintain a clean workspace
+
+## Documentation
+
+-   **[Requirements Specification](docs/REQUIREMENTS_SPECIFICATION.md)**: Comprehensive technical requirements and system specifications
+-   **[Execution Guide](docs/EXECUTION_GUIDE.md)**: Detailed setup and execution instructions
+-   **[Script README](register-login-recovery-script/Register_Login_Recovery_README.md)**: Script-specific documentation
 
 ## Troubleshooting
 
